@@ -59,6 +59,10 @@ ARGS=( "$@" )
 			systemctl reload apache2
 			systemctl restart apache2
 			systemctl restart php7.3-fpm
+			systemctl enable mysql
+			systemctl enable mysqld
+			systemctl start mysql
+			systemctl start mysqld
 			dpkg-reconfigure locales
 			;;
 	    -h|--help)
