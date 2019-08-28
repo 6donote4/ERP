@@ -43,13 +43,13 @@ ARGS=( "$@" )
 			export PATH=$PATH:/sbin:/bin:/usr/bin
 	case "$1" in
            -c)
-			#apt-get install -y apache2* 
-			#apt-get install -y php-*
-			#apt-get install -y php7.3-*
-			#apt-get install -y vim emacs
-			#apt-get install -y default-mysql-server
-			#dpkg -i webmin_1.930_all.deb
-			#apt-get -f install -y
+			apt-get install -y apache2* 
+			apt-get install -y php-*
+			apt-get install -y php7.3-*
+			apt-get install -y vim emacs
+			apt-get install -y default-mysql-server
+			dpkg -i webmin_1.930_all.deb
+			apt-get -f install -y
 			cp -f 000-default-dolibarr.conf /etc/apache2/sites-available/000-default.conf 
 			tar xvf dolibarr*.tar.gz
 			mv dolibarr*/ dolibarr
@@ -67,7 +67,7 @@ ARGS=( "$@" )
 			systemctl enable mysqld
 			systemctl start mysql
 			systemctl start mysqld
-			#dpkg-reconfigure locales
+			dpkg-reconfigure locales
 			;;
 	    -h|--help)
 			usage
